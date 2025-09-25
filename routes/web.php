@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SubCategoryController;
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\ProductController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -26,5 +28,9 @@ Route::resource('categories', CategoryController::class);
 Route::resource('sub-categories', SubCategoryController::class);
 
 Route::resource('brands', BrandController::class);
+
+Route::resource('suppliers', SupplierController::class);
+
+Route::resource('products', ProductController::class);
 
 require __DIR__.'/auth.php';
