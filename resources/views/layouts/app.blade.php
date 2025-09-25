@@ -10,27 +10,38 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/8e69038194.js" crossorigin="anonymous"></script>
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="font-sans antialiased">
-    <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+    <div class="min-h-screen bg-gray-100">
         
         <!-- Navigation -->
-        <nav class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+        <nav class="bg-white border-b border-gray-200 font-serif font-semibold">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between h-16">
                     <div class="flex items-center">
                         <!-- Logo -->
-                        <a href="{{ route('dashboard') }}" class="text-xl font-bold text-gray-800 dark:text-gray-200">
-                            {{ config('app.name', 'Inventory System') }}
-                        </a>
+                        <p class="text-2xl text-indigo-900 flex items-center gap-2 font-semibold">
+                            <i class="fa-solid fa-warehouse"></i>
+                            <a href="{{ route('dashboard') }}">
+                                {{ config('app.name', 'Inventory System') }}
+                            </a>
+                        </p>
                         <!-- Menu Links -->
                         <div class="hidden space-x-4 sm:flex sm:ml-10">
-                            <a href="{{ route('categories.index') }}" class="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium">Categories</a>
-                            <a href="{{ route('sub-categories.index') }}" class="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium">Sub-categories</a>
-                            <a href="{{ route('brands.index') }}" class="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium">Brands</a>
+                            <a href="{{ route('categories.index') }}" 
+                            class="inline-block text-gray-700 hover:text-gray-900 border-b-2 border-transparent hover:border-blue-500">Categories</a>
+                            <a href="{{ route('sub-categories.index') }}" 
+                            class="inline-block text-gray-700 hover:text-gray-900 border-b-2 border-transparent hover:border-blue-500">Sub-categories</a>
+                            <a href="{{ route('brands.index') }}" 
+                            class="inline-block text-gray-700 hover:text-gray-900 border-b-2 border-transparent hover:border-blue-500">Brands</a>
+                            <a href="{{ route('suppliers.index') }}" 
+                            class="inline-block text-gray-700 hover:text-gray-900 border-b-2 border-transparent hover:border-blue-500">Suppliers</a>
+                            <a href="{{ route('products.index') }}" 
+                            class="inline-block text-gray-700 hover:text-gray-900 border-b-2 border-transparent hover:border-blue-500">Products</a>
                         </div>
                     </div>
 

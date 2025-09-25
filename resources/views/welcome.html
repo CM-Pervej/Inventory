@@ -1,95 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inventory Management System</title>
-    <script src="https://kit.fontawesome.com/8e69038194.js" crossorigin="anonymous"></script>
-        <!-- <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" /> -->
-    <!-- @vite('resources/css/app.css') -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.0.0/dist/full.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/8e69038194.js" crossorigin="anonymous"></script>
+  <title>Paaru Store IMS</title>
 </head>
-<body class="bg-gray-50 text-gray-800">
-   <!-- Hero Section -->
+<body>
+  <!-- Hero Section -->
   <section class="bg-gradient-to-tr from-white via-cyan-200 to-cyan-500 p-6 min-h-screen">
     <!-- Header -->
-    <nav class="flex justify-between items-center font-bold">
-        <p class="text-3xl md:text-4xl text-indigo-900 flex items-center gap-2 font-serif">
-            <i class="fa-solid fa-warehouse"></i> Paaru Store
-        </p>
-
-        @auth
-        <div class="flex gap-5 items-end uppercase tracking-widest">
-          <div class="dropdown dropdown-hover dropdown-center cursor-pointer">
-              <label tabindex="0" class="mb-2 flex items-center gap-1">
-                <span class="hover:text-yellow-300">Category</span> 
-                <i class="fa-solid fa-caret-down"></i>
-              </label>
-              <ul tabindex="0" class="dropdown-content z-10 shadow border">
-                  <li class="border-b border-gray-300 hover:shadow">
-                      <a href="{{ route('categories.index') }}" class="block w-full p-2 hover:text-blue-500">Categories</a></li>
-                  <li class="border-b border-gray-300 hover:shadow">
-                      <a href="{{ route('categories.create') }}" class="block w-full p-2 hover:text-blue-500">Create</a></li>
-              </ul>
-          </div>
-          <div class="dropdown dropdown-hover dropdown-center cursor-pointer">
-              <label tabindex="0" class="mb-2 flex items-center gap-1"><span class="hover:text-yellow-300">Sub Category</span> <i class="fa-solid fa-caret-down"></i></label>
-              <ul tabindex="0" class="dropdown-content z-10 w-48 shadow border">
-                  <li class="border-b border-gray-300 hover:shadow">
-                      <a href="{{ route('sub-categories.index') }}" class="block w-full p-2 hover:text-blue-500">Sub Categories</a></li>
-                  <li class="border-b border-gray-300 hover:shadow">
-                      <a href="{{ route('sub-categories.create') }}" class="block w-full p-2 hover:text-blue-500">Create</a></li>
-              </ul>
-          </div>
-          <div class="dropdown dropdown-hover dropdown-center cursor-pointer">
-              <label tabindex="0" class="mb-2 flex items-center gap-1"><span class="hover:text-yellow-300">Brand</span> <i class="fa-solid fa-caret-down"></i></label>
-              <ul tabindex="0" class="dropdown-content z-10 shadow border">
-                  <li class="border-b border-gray-300 hover:shadow">
-                      <a href="{{ route('brands.index') }}" class="block w-full p-2 hover:text-blue-500">Brands</a></li>
-                  <li class="border-b border-gray-300 hover:shadow">
-                      <a href="{{ route('brands.create') }}" class="block w-full p-2 hover:text-blue-500">Create</a></li>
-              </ul>
-          </div>
-          <div class="dropdown dropdown-hover dropdown-center cursor-pointer">
-              <label tabindex="0" class="mb-2 flex items-center gap-1"><span class="hover:text-yellow-300">Supplier</span> <i class="fa-solid fa-caret-down"></i></label>
-              <ul tabindex="0" class="dropdown-content z-10 shadow border">
-                  <li class="border-b border-gray-300 hover:shadow">
-                      <a href="{{ route('suppliers.index') }}" class="block w-full p-2 hover:text-blue-500">Suppliers</a></li>
-                  <li class="border-b border-gray-300 hover:shadow">
-                      <a href="{{ route('suppliers.create') }}" class="block w-full p-2 hover:text-blue-500">Create</a></li>
-              </ul>
-          </div> 
-          <div class="dropdown dropdown-hover dropdown-center cursor-pointer">
-              <label tabindex="0" class="mb-2 flex items-center gap-1"><span class="hover:text-yellow-300">Product</span> <i class="fa-solid fa-caret-down"></i></label>
-              <ul tabindex="0" class="dropdown-content z-10 shadow border">
-                  <li class="border-b border-gray-300 hover:shadow">
-                      <a href="{{ route('products.index') }}" class="block w-full p-2 hover:text-blue-500">Products</a></li>
-                  <li class="border-b border-gray-300 hover:shadow">
-                      <a href="{{ route('products.create') }}" class="block w-full p-2 hover:text-blue-500">Create</a></li>
-              </ul>
-          </div>
-        </div>
-        @endauth
-
-        <div class="flex gap-4 text-indigo-900">
-            @guest
-            <div>
-                <a href="{{ route('login') }}" class="hover:underline">Login</a>
-                <span>/</span>
-                <a href="{{ route('register') }}" class="hover:underline">Register</a>
-            </div>
-            @endguest
-
-            @auth
-            <div>
-                <a href="{{ route('dashboard') }}" class="hover:underline">Dashboard</a>
-            </div>
-            @endauth
-        </div>
-    </nav>
-    
+    <div class="flex justify-between items-center font-bold">
+      <p class="text-3xl md:text-4xl text-indigo-900 flex items-center gap-2">
+        <i class="fa-solid fa-warehouse"></i> Paaru Store
+      </p>
+      <div class="flex gap-4 text-indigo-900">
+        <a href="#" class="hover:underline">Sign In</a>
+        <span>/</span>
+        <a href="#" class="hover:underline">Sign Up</a>
+      </div>
+    </div>
 
     <!-- Hero Content -->
     <div class="text-center mt-20 flex flex-col gap-6 px-4">
