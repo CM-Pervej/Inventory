@@ -54,14 +54,7 @@
 
 <div>
     <label class="block">Size</label>
-    <select name="size" class="w-full border px-2 py-1">
-        <option value="">--Select--</option>
-        @foreach (['S','M','L','XL'] as $size)
-            <option value="{{ $size }}" {{ old('size', $product->size ?? '') == $size ? 'selected' : '' }}>
-                {{ $size }}
-            </option>
-        @endforeach
-    </select>
+    <input type="text" name="size" value="{{ old('size', $product->size ?? '') }}" class="w-full border px-2 py-1">
 </div>
 
 <div>
